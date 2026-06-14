@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h3 class="mb-3">All Books</h3>
+
+<div class="row">
+
+    {% for book in books %}
+
+    <div class="col-md-4 mb-3">
+
+        <div class="card shadow-sm">
+
+            <div class="card-body">
+
+                <h5 class="card-title">{{ book.title }}</h5>
+
+                <p class="card-text">
+                    <b>Author:</b> {{ book.author }} <br>
+                    <b>Price:</b> {{ book.price }} EGP
+                </p>
+
+                <a class="btn btn-primary btn-sm"
+                   href="{% url 'books:book-detail' book.id %}">
+                    View
+                </a>
+
+                <a class="btn btn-warning btn-sm"
+                   href="{% url 'books:book-update' book.id %}">
+                    Edit
+                </a>
+
+                <a class="btn btn-danger btn-sm"
+                   href="{% url 'books:book-delete' book.id %}">
+                    Delete
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    {% endfor %}
+
+</div>
+
+{% endblock %}

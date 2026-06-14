@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="card shadow">
+
+    <div class="card-body">
+
+        <h3 class="card-title">{{ book.title }}</h3>
+
+        <p class="card-text">
+            <b>ID:</b> {{ book.id }} <br>
+            <b>Author:</b> {{ book.author }} <br>
+            <b>Price:</b> {{ book.price }} EGP
+        </p>
+
+        <a href="{% url 'books:book-list' %}" class="btn btn-secondary">
+            Back
+        </a>
+
+        <a href="{% url 'books:book-update' book.id %}" class="btn btn-warning">
+            Edit
+        </a>
+
+        <a href="{% url 'books:book-delete' book.id %}" class="btn btn-danger">
+            Delete
+        </a>
+
+    </div>
+
+</div>
+
+{% endblock %}
