@@ -8,7 +8,7 @@ __pycache__/
 venv/
 env/
 .venv/
-settings.py
+BookStore/settings.py
 # Django
 *.log
 db.sqlite3
