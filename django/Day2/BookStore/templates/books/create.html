@@ -15,23 +15,17 @@
 
     <h2>Create Book</h2>
 
-    <form method="POST">
-        {% csrf_token %}
+<form method="POST">
 
-        <input type="text" name="title" placeholder="Book Title" required>
+    {% csrf_token %}
 
-        <textarea name="desc" placeholder="Book Description" rows="5"></textarea>
+    {{ form.as_p }}
 
-        <input type="number" step="0.1" name="rate" placeholder="Rate (e.g 4.5)">
+    <button type="submit">
+        Create
+    </button>
 
-        <input type="number" name="views" placeholder="Views">
-
-        <button type="submit">Create</button>
-                <a class="btn add-btn" href="{% url 'book_list' %}" style= " margin-top : 12px">
-            back
-        </a>
-
-    </form>
+</form>
 
 </div>
 
